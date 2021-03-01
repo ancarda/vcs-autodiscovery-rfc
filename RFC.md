@@ -91,7 +91,7 @@ path, the `rawfile` key is used for this purpose. Here, "deterministic"
 means software can construct a URL to the file without having to have knowledge
 about the file including it's size, creation timestamp, or hash.
 
-    <meta name="vcs:file"
+    <meta name="vcs:rawfile"
           content="https://rfc.example/%path%?ref=%branch%&raw=1" />
 
 ### 4.4. Path to File (Pretty Printed)
