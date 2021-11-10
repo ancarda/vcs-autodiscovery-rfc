@@ -44,16 +44,41 @@ by `{` and `}` characters.
 
 ### 3.2. {path}
 
-`{path}` is the path to a file or directory without a leading slash. For
-instance, `docs/README.md` (file) or `docs/` (directory).
+`{path}` is the path to a file or directory without a leading forward slash.
+Directories MUST end with a forward slash, files MUST NOT end with a forward
+slash.
+
+Valid examples:
+
+* `docs/README.md` (file)
+* `docs/` (directory).
+
+### 3.3. {line}
+
+`{line}` is a line number or range of line numbers. Here, "number" means a
+non-negative, non-zero integer. Valid formats include:
+
+- A single number.
+- A number range (example: `5-8`).
+- A comma separated list of numbers (example: `5,7,8,9`).
+- A comma separated list of ranges or numbers (example: `5,7-9`).
+
+Software forges implementing a tag with this variable MUST support the single
+number mode and SHOULD gracefully ignore ranges and lists if there is no
+support for that.
+
+Software forges MAY error if a range is in descending order (example: `8-5`) or
+a list is in descending order (example: `9,8,7,5`).
 
 ## 4. Standard Tags
 
 ### 4.1. VCS
 
 There is only one required meta tag, `vcs` which indicates the Version
-Control System being used. This tag MAY have the following values, but is not
-an exhaustive list. Software MUST be able to gracefully handle unknown values:
+Control System being used. The purpose of 4.1 is to facilitate repo cloning.
+
+This tag MAY have the following values, but is not an exhaustive list. Software
+MUST be able to gracefully handle unknown values:
 
 * `bzr`    (GNU Bazaar)        bazaar.canonical.com
 * `darcs`  (Darcs)             darcs.net
@@ -76,7 +101,7 @@ same project (on the same HTML page) is not supported. Software consuming pages
 SHOULD error if space, colon, or semicolon is present in the content attribute
 of a `vcs` tag.
 
-### 4.2. Default Branch
+#### 4.1.1. Default Branch
 
 If the version control system has the concept of "branches", where different
 versions of the code may live, the `default-branch` key is used for this
@@ -84,31 +109,7 @@ purpose.
 
     <meta name="vcs:default-branch" content="master" />
 
-### 4.3. Path to File (Raw)
-
-If the software forge allows a raw file to be retrieved with a deterministic
-path, the `rawfile` key is used for this purpose. Here, "deterministic"
-means software can construct a URL to the file without having to have knowledge
-about the file including it's size, creation timestamp, or hash.
-
-    <meta name="vcs:rawfile"
-          content="https://rfc.example/{path}?ref={ref}&raw=1" />
-
-### 4.4. Path to File (Pretty Printed)
-
-If the software forge allows a file to be shown to an end-user with some pretty
-printing, the `file` key is used for this purpose. Like `rawfile` (4.3), the
-URI MUST be deterministic.
-
-    <meta name="vcs:file"
-          content="https://rfc.example/{path}?ref={ref}" />
-
-### 4.5. Path to Explore Directory Contents (Pretty Printed)
-
-    <meta name="vcs:dir"
-          content="https://rfc.example/{ref}/{path}" />
-
-### 4.6. Clone URI
+#### 4.1.2. Clone URI
 
 Software Forges MAY present one or more URIs using any scheme.
 
@@ -121,3 +122,47 @@ not require authentication. The unauthorized URI SHOULD be first.
 
 Software that cannot understand a clone URI or was denied access SHOULD try the
 subsequent URIs before failing.
+
+### 4.2. Forge
+
+Tags in 4.2 are to facilitate navigation around software forges.
+
+#### 4.2.1. Path to File (Raw)
+
+If the software forge allows a raw file to be retrieved with a deterministic
+path, the `rawfile` key is used for this purpose. Here, "deterministic"
+means software can construct a URL to the file without having to have knowledge
+about the file including it's size, creation timestamp, or hash.
+
+    <meta name="forge:rawfile"
+          content="https://rfc.example/{path}?ref={ref}&raw=1" />
+
+#### 4.2.2. Path to File (Pretty Printed)
+
+If the software forge allows a file to be shown to an end-user with some pretty
+printing, the `file` key is used for this purpose. Like `rawfile` (4.2.1), the
+URI MUST be deterministic.
+
+    <meta name="forge:file"
+          content="https://rfc.example/{path}?ref={ref}" />
+
+#### 4.2.3. Path to Explore Directory Contents (Pretty Printed)
+
+    <meta name="forge:dir"
+          content="https://rfc.example/{ref}/{path}" />
+
+#### 4.2.4. Path to Project Summary
+
+Links to an overview of the project. This may be hosted on a separate domain.
+
+    <meta name="forge:summary" content="https://rfc.example/my-cool-project">
+
+#### 4.2.5. Line
+
+If the software forge supports pretty printing a file with a highlighted line,
+it is indicated this way:
+
+    <meta name="forge:line"
+        content="https://rfc.example/tree/{ref}/item/{path}#L{line}">
+
+The `{line}` variable is mandatory.
