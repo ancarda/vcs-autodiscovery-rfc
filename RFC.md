@@ -38,9 +38,9 @@ Section 4 describes meta tags that are used for this standard. The content
 attribute MAY contain one or more variables, which are lowercase and surrounded
 by `{` and `}` characters.
 
-### 3.1. {branch}
+### 3.1. {ref}
 
-`{branch}` is the name of a "branch" or a similar named reference concept.
+`{ref}` is the name of a "branch" or a similar named reference concept.
 
 ### 3.2. {path}
 
@@ -92,7 +92,7 @@ means software can construct a URL to the file without having to have knowledge
 about the file including it's size, creation timestamp, or hash.
 
     <meta name="vcs:rawfile"
-          content="https://rfc.example/{path}?ref={branch}&raw=1" />
+          content="https://rfc.example/{path}?ref={ref}&raw=1" />
 
 ### 4.4. Path to File (Pretty Printed)
 
@@ -101,12 +101,12 @@ printing, the `file` key is used for this purpose. Like `rawfile` (4.3), the
 URI MUST be deterministic.
 
     <meta name="vcs:file"
-          content="https://rfc.example/{path}?ref={branch}" />
+          content="https://rfc.example/{path}?ref={ref}" />
 
 ### 4.5. Path to Explore Directory Contents (Pretty Printed)
 
     <meta name="vcs:dir"
-          content="https://rfc.example/{branch}/{path}" />
+          content="https://rfc.example/{ref}/{path}" />
 
 ### 4.6. Clone URI
 
