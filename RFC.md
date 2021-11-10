@@ -35,16 +35,16 @@ when, and only when, they appear in all capitals, as shown here.
 ## 3. Standard Variables
 
 Section 4 describes meta tags that are used for this standard. The content
-attribute MAY contain one or more variables, which are wrapped in a `%`
-character and are lowercase.
+attribute MAY contain one or more variables, which are lowercase and surrounded
+by `{` and `}` characters.
 
-### 3.1. %branch%
+### 3.1. {branch}
 
-`%branch%` is the name of a "branch" or a similar named reference concept.
+`{branch}` is the name of a "branch" or a similar named reference concept.
 
-### 3.2. %path%
+### 3.2. {path}
 
-`%path%` is the path to a file or directory without a leading slash. For
+`{path}` is the path to a file or directory without a leading slash. For
 instance, `docs/README.md` (file) or `docs/` (directory).
 
 ## 4. Standard Tags
@@ -92,7 +92,7 @@ means software can construct a URL to the file without having to have knowledge
 about the file including it's size, creation timestamp, or hash.
 
     <meta name="vcs:rawfile"
-          content="https://rfc.example/%path%?ref=%branch%&raw=1" />
+          content="https://rfc.example/{path}?ref={branch}&raw=1" />
 
 ### 4.4. Path to File (Pretty Printed)
 
@@ -101,12 +101,12 @@ printing, the `file` key is used for this purpose. Like `rawfile` (4.3), the
 URI MUST be deterministic.
 
     <meta name="vcs:file"
-          content="https://rfc.example/%path%?ref=%branch%" />
+          content="https://rfc.example/{path}?ref={branch}" />
 
 ### 4.5. Path to Explore Directory Contents (Pretty Printed)
 
     <meta name="vcs:dir"
-          content="https://rfc.example/%branch%/%path%" />
+          content="https://rfc.example/{branch}/{path}" />
 
 ### 4.6. Clone URI
 
