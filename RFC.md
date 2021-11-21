@@ -45,11 +45,10 @@ by `{` and `}` characters.
 ### 3.2. {path}
 
 `{path}` is the path to a file or directory without a leading forward slash.
-Directories MUST end with a forward slash, files MUST NOT end with a forward
-slash.
+The root directory MUST not be `/`, but rather an empty string.
 
-The only exception to this rule is that the root directory MUST not be `/`,
-but rather an empty string.
+Directories SHOULD end with a forward slash, files SHOULD NOT end with a
+forward slash.
 
 Valid examples:
 
