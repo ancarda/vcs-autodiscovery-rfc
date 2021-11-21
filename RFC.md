@@ -48,10 +48,14 @@ by `{` and `}` characters.
 Directories MUST end with a forward slash, files MUST NOT end with a forward
 slash.
 
+The only exception to this rule is that the root directory MUST not be `/`,
+but rather an empty string.
+
 Valid examples:
 
 * `docs/README.md` (file)
-* `docs/` (directory).
+* `docs/` (directory)
+* `` (root directory)
 
 ### 3.3. {line}
 
