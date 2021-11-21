@@ -45,7 +45,7 @@ by `{` and `}` characters.
 ### 3.2. {path}
 
 `{path}` is the path to a file or directory without a leading forward slash.
-The root directory MUST not be `/`, but rather an empty string.
+The root directory MUST NOT be `/`, but rather an empty string.
 
 Directories SHOULD end with a forward slash, files SHOULD NOT end with a
 forward slash.
@@ -98,7 +98,7 @@ Here is an example tag:
 This tag MUST be used exactly once. Software consuming pages MUST error if this
 tag is used more than once.
 
-The content of this tag MUST not include spaces, commas, semicolons, or
+The content of this tag MUST NOT include spaces, commas, semicolons, or
 anything to otherwise indicate a list. Multiple version control systems for the
 same project (on the same HTML page) is not supported. Software consuming pages
 SHOULD error if space, colon, or semicolon is present in the content attribute
