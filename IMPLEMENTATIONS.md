@@ -23,12 +23,20 @@ that consumes it.
 
 ### Software Forges
 
+* **SourceHut (Git)**
+    Maintainer: `Adnan Maolood <me@adnano.co>`, `Drew DeVault <sir@cmpwn.com>`
+    URI: <https://git.sr.ht>
+
 ### Server-Side Libraries
 
 ### Executables and Hosted Services that produce Meta Tags
 
 ## Consumers
 
-### Client-Side Libraries
-
 ### Executables and Hosted Services that are enhanced by Meta Tags
+
+* **godocs.io**
+    Maintainer: `Adnan Maolood <me@adnano.co>`
+    URI: <https://godocs.io>
+
+### Client-Side Libraries
