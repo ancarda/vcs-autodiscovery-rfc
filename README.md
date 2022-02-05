@@ -19,7 +19,7 @@ navigate this project. These tags look like:
 
 ## Standard
 
-Read the latest standard in RFC.md
+Read the latest standard in [RFC.md](RFC.md)
 
 Discuss the RFC here: <https://lists.sr.ht/~ancarda/vcs-autodiscovery>
 
