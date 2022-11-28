@@ -25,9 +25,9 @@ Discuss the RFC here: <https://lists.sr.ht/~ancarda/vcs-autodiscovery>
 
 ## Known Implementations
 
-Known implementations are in IMPLEMENTATIONS.md. If you write software that
-produces or consumes VCS Autodiscovery meta tags, please send a patch to add
-yourself to IMPLEMENTATIONS.md
+Known implementations are in [IMPLEMENTATIONS.md](IMPLEMENTATIONS.md). If you
+write software that produces or consumes VCS Autodiscovery meta tags, please
+send a patch to add yourself to IMPLEMENTATIONS.md
 
 You may want to subscribe to the mailing list, where changes to the RFC will
 be discussed.
