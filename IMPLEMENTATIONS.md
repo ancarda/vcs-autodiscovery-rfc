@@ -31,6 +31,10 @@ that consumes it.
 
 ### Executables and Hosted Services that produce Meta Tags
 
+* **vanitydoc**
+    Maintainer: `Olivier Charvin <git@olivier.pfad.fr>`
+    URI: <https://code.pfad.fr/vanitydoc>
+
 ## Consumers
 
 ### Executables and Hosted Services that are enhanced by Meta Tags
