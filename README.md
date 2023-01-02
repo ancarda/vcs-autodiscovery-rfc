@@ -12,10 +12,10 @@ understand different software forges. Given a URL, such as:
 Software can scrape `<meta>` tags in the `<head>` tag to learn how to clone or
 navigate this project. These tags look like:
 
-    <meta name="vcs" value="git">
+    <meta name="vcs" content="git">
 
     <meta name="vcs:clone"
-          value="https://vcs-autodiscovery.example/project.git">
+          content="https://vcs-autodiscovery.example/project.git">
 
 ## Standard
 
